@@ -86,12 +86,10 @@ order by player
 Show teamname and the total number of goals scored.
 COUNT and GROUP BY
 ****************
-with cte1 as(select b.teamname
+select b.teamname, count(b.teamname)
 from goal a
 inner join eteam b
-on a.teamid = b.id)
-select teamname, count(teamname)
-from cte1
+on a.teamid = b.id
 group by teamname
 
 10.
